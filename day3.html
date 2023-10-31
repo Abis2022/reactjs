@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="myfunc()">submit</button>
+    <h1 id="head">sample</h1>
+    <p class="mypara">This is a sample paragraph</p>
+    <button ondblclick="myfun()">click to chagee color</button>
+    <h2 id="over" onmouseover="myover()">onmouseover example</h2>
+    <button onclick="myalert()">For down alrert</button>
+    <button onmousedown="myalert()">For down alrert</button>
+    <button onmouseup="myalert()">For down alrert</button>
+    <h5 onmouseover="mymouse()" >mouse over sample</h5>
+    <p id="mypara">this is a line 1</p>
+    <p id="mypara">this is a line 2</p>
+    <input type="text" id="field">
+    <button id="mybutton">submit</button>
+    <script>
+        function myfunc(){
+            
+            head.textContent="updated sample"
+            head.style.color="red"
+        }
+        const para=document.getElementsByClassName("mypara")[0];
+        para.innerHTML="<h3>upadated para<h3>"
+        //const head=document.getElementById("head");
+        function myfun(){
+            para.style.color="red"
+        }
+        function myover(){
+            const overr=document.getElementById("over")
+            over.style.color="green"
+            
+        }
+        function myalert(){
+            
+            alert("mouseover alerted")
+        }
+        function mymouse(){
+            const mouse=document.getElementsByTagName("h5")
+            mouse.alert("line hovered successfully")
+        }
+        const selector=document.querySelector("#head")
+        
+        selector.style.backgroundColor="red"
+        selector.style.color="white"
+        
+        const selector2=document.querySelectorAll("#mypara")
+        selector2.forEach((i)=>{
+            i.style.backgroundColor="gold"
+            
+        });
+        const field=document.getElementById("field");
+        const button =document.getElementById("mybutton");
+        button.addEventListener("click",()=>{
+            let output=field.value;
+           // alert(output)
+            const emailpattern=/^[a-z0-9_-]+@[a-z]+.[a-z]{2,4}$/
+            const validpattern=emailpattern.test(output)
+            if(validpattern==true)
+                alert("valid email")
+            else
+                alert("Invalid email")
+        })
+    </script>
+</body>
+</html>
